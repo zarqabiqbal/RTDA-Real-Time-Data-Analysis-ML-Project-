@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RTSA</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    {% if title %}
+        <title>!! RTSA !!{{ title }}</title>
+    {% else %}
+        <title>!! RTSA !!</title>
+    {% endif %}
+</head>
+<body >
+
+        <!-- Image and text -->
+
+
+        <nav class="navbar fixed-top navbar-dark bg-dark">
+          <a class="navbar-brand" href="/index">
+            <img src="{{url_for('static',filename='images/baseline_remove_red_eye_white_18dp.png')}}" width="30" height="30" class="d-inline-block align-top" alt="">
+            REAL TIME SENTIMENTAL ANALYSIS
+          </a>
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link active" href="/home">HOME</a>
+          </li>
+        </ul>
+
+        </nav>
+        <pre>
+
+
+        </pre>
+
+        <div class="container-fluid" >
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <pre>
+
+                            </pre>
+                            <p style="color:blue;">
+                                Sentimental Analysis detemines the emotional tone behind a series of words, used to gain an understanding of the the attitudes, opinions .IT allows for a more objective interpretation of factors that are otherwise difficult to measure or typically measured subjectively, such as:
+                            </p>
+                                <ul style="color:blue;">
+                                    <li>The amount of stress or frustration in a customer's voice</li>
+                                    <li>How fast the individual is speaking (rate of speech)</li>
+                                    <li>Changes in the level of stress indicated by the person's speech (such as in response to a solution provided by a customer support representative</li>
+                                </ul>
+                            <p style="color:blue;">
+                                One of the most widely used applications for sentiment analysis is for monitoring call center and customer support performance.<br>
+                                Sentiment analysis has been used by political candidates and administrations to monitor overall opinions about policy changes and campaign announcements, enabling them to fine-tune their approach and messaging to better relate to voters and constituents
+                            </p>
+
+                          </div>
+                        <div class="col-lg-7">
+                            <img class="rounded" src="{{url_for('static',filename='images/home5.jpg')}}" height=100% width="100%">
+                        </div>
+                   </div>
+
+        </div>
+        <div class="container">
+            <div  class="row"><pre> </pre></div>
+                    <div class="col-lg-12 col align-self-center">
+                        <a  class="btn btn-success  btn-block" href="/home" role="button" >GET  STARTED</a>
+            </div>
+
+        </div>
+
+</body>
+</html>

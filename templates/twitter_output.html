@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<pre>
+
+
+</pre>
+       <div class="container-fluid">
+            <div  class="row">
+                <div class="col col-lg-8">
+
+
+
+
+                    {% if condition %}
+                        <div class="card bg-dark text-white">
+                        <div class="card-heading"><center><h1>Something Wrong</h1></center></div>
+                        <div class="card-body"><h1>{{ error }}</h1></div>
+                        </div>
+                    {% else %}
+
+
+                               <div class="card bg-dark text-white">
+                                    <div class="card-heading"><center><h2>Sources of Tweets</h2></center></div>
+                                    <div class="card-body"><h3>
+                                        {% for source in twit_src:%}
+
+                                            {{ source }}
+                                        {% endfor %}
+
+                                    </h3></div>
+                                </div>
+                                <br>
+                                <div class="card bg-dark text-white">
+                                    <div class="card-heading"><center><h2>Most Liked Tweets</h2></center></div>
+                                    <div class="card-body"><h5> {{ likeTweet }}</h5></div>
+                                </div>
+                                <br>
+                                <div class="card bg-dark text-white">
+                                    <div class="card-heading"><center><h2>Retweets</h2></center></div>
+                                    <div class="card-body"><h5>{{ retweet }}</h5></div>
+                                </div>
+                                <br>
+                                <div class="card bg-dark text-white">
+                                    <div class="card-heading"><center><h2>Sentiment Outcomes</h2></center></div>
+                                    <div class="card-body"><h5> Positive ={{ pos }} %</h5>
+                                                            <h5> Negative ={{ neg }} %</h5>
+                                                            <h5> Neutral ={{ neu }} %</h5>
+                                    </div>
+                                </div>
+                         {% endif %}
+
+
+            </div>
+                <div class="col col-lg-4">
+                     <div class="alert alert-info ">
+                    <h4>{{str_var}}</h4>
+
+                    </div>
+
+                    <center>
+                            <input type="text"   id="myValues" value="{{great_per}}"  readonly/>
+                     </center>
+                   <script src="{{url_for('static',filename='jquery.js')}}"></script>
+                   <script src="{{url_for('static',filename='speedometer.js')}}"></script>
+                   <script src="{{url_for('static',filename='speedometershow.js')}}"></script>
+                 </div>
+            </div>
+       </div>
+
+
+ </body>
+</html>
+{% endblock %}

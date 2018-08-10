@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<pre>
+
+
+</pre>
+       <div class="container-fluid">
+            <div  class="row">
+                <div class="col col-lg-8"></div>
+                 <div class="col col-lg-4">
+
+                    <center>
+                        <input type="text"   id="myValues"/>
+                     </center>
+                   <script src="{{url_for('static',filename='jquery.js')}}"></script>
+                   <script src="{{url_for('static',filename='speedometer.js')}}"></script>
+                   <script src="{{url_for('static',filename='speedometershow.js')}}"></script>
+                 </div>
+            </div>
+       </div>
+
+
+ </body>
+</html>
+{% endblock %}

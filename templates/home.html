@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RTSA</title>
+	<link rel="stylesheet" href="{{url_for('static',filename='home.css')}}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+ <script src="{{url_for('static',filename='modal.js')}}"></script>
+</head>
+<body>
+
+
+        <!-- Image and text -->
+
+		<nav class="navbar fixed-top navbar-dark bg-dark">
+
+         <form class="form-inline my-2 my-lg-0"  method="POST" action="/Sentiment_Search">
+          <input class="form-control mr-sm-2" placeholder="Search"  name="search_Text" required="">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Know the sentiment</button>
+        </form>
+        <a class="nav-link" href="/home">Home</a>
+        <a class="nav-link" href="/cancer">Cancer Prediction</a>
+          <a class="navbar-brand" href="/index">
+            <img src="{{url_for('static',filename='images/baseline_remove_red_eye_white_18dp.png')}}" width="30" height="30" class="d-inline-block align-top" alt="">
+            REAL TIME SENTIMENTAL ANALYSIS
+          </a>
+
+
+
+        </nav>
+
+<br>
+
+        {% if okk %}
+
+        <pre>
+
+        </pre>
+        <div class="container-fluid" >
+            <div class="row">
+                 <div class="col col-lg-3"></div>
+                 <div class="col col-lg-6">
+                    <div class="alert alert-info ">
+                        <center><h2>Your search - " {{srch}} "</h2></center>
+                    <h4>Negative ={{negg}}</h4>
+                    <h4>Neutral={{neuu}}</h4>
+                    <h4>Positive={{poss}}</h4>
+                    <h4>Compound={{comm}}</h4>
+                    </div>
+                 </div>
+                 <div class="col col-lg-3"></div>
+            </div>
+        </div>
+
+
+            <!--script>
+                alert("Negative ={{negg}}\nPositive={{neuu}}\nPositive={{poss}}\nCompound={{comm}}");
+            </script-->
+
+        {% else %}
+        {% endif %}
+<div class="container-fluid" class="col-lg-12">
+    <img src="{{url_for('static',filename='images/walpaper.png')}}" height="500px" width="100%">
+</div>
+<pre>
+</pre>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+           <table border="0" cellpadding="4px">
+                <tr>
+                    <td>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <p style="color: blue">
+                                        Facebook is a popular free social networking website that allows registered users to create profiles, upload photos and video, send messages and keep in touch with friends, family and colleagues. The site, which is available in 37 different languages, includes public features such as:
+                                        Marketplace - allows members to post, read and respond to classified ads.
+                                        Groups - allows members who have common interests to find each other and interact.
+                                        Events  - allows members to publicize an event, invite guests and track who plans to attend.
+                                        Pages - allows members to create and promote a public page built around a specific topic.
+                                        Presence technology - allows members to see which contacts are online and chat.
+                                    </p>
+
+                                </div>
+                                <div class="col-lg-4">
+                                              <img src="{{url_for('static',filename='images/facebook.png')}}" alt="fb-RTSE" height="200px" width="200px">
+                                              <div>
+                                                  <pre> </pre>
+                                               </div>
+
+                                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#facebookModal">
+                                            YOUR  POST
+                                          </button>
+
+                                           <!-- Modal -->
+                                          <div class="modal fade" id="facebookModal" tabindex="-1" role="dialog" aria-labelledby="facebookModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+                                                  <h5 class="modal-title" id="facebookModalLabel">!! Facebook Post  Analysis !!</h5>
+                                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                  </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                  <p>We will  redirecting you to Facebook for further process...
+                                                    This doesn't let's  to post anything to ur facebook page !!
+                                                   </p>
+                                                   <br>
+
+                                                    <form  method="POST" action="/facebook">
+                                                        <button type="submit" class="btn btn-primary">Redirect</button>
+                                                    </form>
+                                                </div>
+
+                                              </div>
+                                              <div class="modal-footer">
+                                                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+                                                </div>
+                                            </div>
+                                          </div>
+                                    </div>
+
+                            </div>
+                         </div>
+                        </td>
+
+
+                    <td>
+						<div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                            <img src="{{url_for('static',filename='images/whatapp.png')}}"  alt="whatsapp-RTSE" height="200px" width="180px" >
+                                            <div>
+                                                <pre> </pre>
+
+                                            </div>
+                                           <button type="button" class="btn btn-success" data-toggle="modal" data-target="#whatsappModal">
+                                            CONVERSATION
+                                          </button>
+
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="whatsappModal" tabindex="-1" role="dialog" aria-labelledby="whatsappModalLabel" aria-hidden="true">
+                                              <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                  <div class="modal-header">
+                                                    <h5 class="modal-title" id="whatsappModalLabel">Whatsapp Conversation Analysis</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                      <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                    <p>We will  redirecting you to WhatsppWeb for further process...<br>
+                                                      Keep your mobile ready for scanning the QR-Code after...
+                                                    </p>
+                                                    <br>
+                                                   <form method="POST" action="/whatsappAnalysis">
+                                                    <label>Enter the valid person name / Group Name</label><input type="text" name="conversation_id"  required="">
+
+                                                    <button type="submit" class="btn btn-primary">  Redirect </button>
+                                                   </form>
+                                                  </div>
+                                                  </div>
+                                                  <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+                                                </div>
+                                              </div>
+                                            </div>
+
+                                </div>
+                                <div class="col-lg-8">
+                                    <p style="color: blue">
+                                        WhatsApp is most popular chat app with monthly active users of more than 700 million. The popularity of this app has made it a necessary app among smartphone users and even businesses and organizations use WhatsApp for daily communication in groups and across departments. Corporations get a huge amount of textual data from WhatsApp and they can leverage WhatsApp chat sentiment analysis to gain better insights about their employees and try to avoid unforeseen conflicts due to various redundancies and inefficiency of business processes.
+                                    </p>
+
+                                </div>
+
+                        </div>
+                       </div>
+                    </td>
+                </tr>
+               <tr>
+                    <td>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <p style="color: blue">
+                                        Twitter  is an online news and social networking service on which users post and interact with messages known as "tweets". Registered users can post tweets, but those who are unregistered can only read them. Users access Twitter through its website interface, through Short Message Service (SMS) or mobile-device application software.Twitter proved to be the largest source of breaking news, with 40 million election-related tweets.As a social network, Twitter revolves around the principle of followers. When you choose to follow another Twitter user, that user's tweets appear in reverse chronological order on your main Twitter page. If you follow 20 people, you'll see a mix of tweets scrolling down the page: breakfast-cereal updates, interesting new links, music recommendations, even musings on the future of education. 
+                                    </p>
+
+                                </div>
+                                <div class="col-lg-4">
+                                    <img src="{{url_for('static',filename='images/twitter.png')}}" alt="tweets-RTSE" height="200px" width="200px">
+                                    <div>
+                                        <pre> </pre>
+
+                                    </div>
+                                    <!--a  class="btn-dark btn-lg" href="tweets.html" role="button" > ANY TWEETS </a-->
+
+                  <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#twitterModal">
+                    ANY TWEETS
+                  </button>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="twitterModal" tabindex="-1" role="dialog" aria-labelledby="twitterModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="twitterModalLabel">Tweets Sentimental Analysis </h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+
+                        <div class="modal-body">
+                        <form  method="POST" action="/datacoming_twitter">
+                          <label>Enter the valid Username available over Twitter    </label>
+                        <input type="text" name="tw_username" required="" >
+                        <button type="submit" class="btn btn-primary">Go</button>
+
+                        </form>
+                        </div>
+
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+                        </div>
+                    </div>
+                  </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        </td>
+
+
+                    <td>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <img src="{{url_for('static',filename='images/cancer3.jpg')}}" style="border-radius: 65%" alt="camera-RTSE" height="200pxpx" width="200px" >
+                                    <div>
+                                        <pre> </pre>
+
+                                    </div>
+                                    <a  class="btn btn-info" href="/cancer" role="button" > PREDICT  </a>
+
+                                </div>
+                                <div class="col-lg-8">
+                                    <p style="color: blue">
+                                        Lung cancer is a group of diseases characterized by abnormal growths (cancers) that started in the lungs.Lung cancer is the leading cause of cancer deaths in women and men both in the United States and throughout the world. Lung cancer has surpassed breast cancer as the leading cause of cancer deaths in women for the past 25 years. In the United States, there are more deaths due to lung cancer than the number of deaths from colon and rectal, breast, and prostate cancer combined.If lung cancer is found at an early stage, at least half of such patients will be alive and free of recurrent cancer five years later. Once lung cancer has metastasized, that is, spread to other distant organs, the five-year overall survival is less than 5%.
+                                    </p>
+
+                                </div>
+
+                        </div>
+						</div>
+                    </td>
+
+                </tr>
+
+            </table>
+            </div>
+    </div>
+
+</div>
+
+
+
+
+</body>
+</html>
